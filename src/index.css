@@ -7,10 +7,6 @@
   url("//db.onlinewebfonts.com/t/9049cb12d5c47bcddd434cf20d8ac6c1.ttf") format("truetype"), 
   url("//db.onlinewebfonts.com/t/9049cb12d5c47bcddd434cf20d8ac6c1.svg#Birmingham") format("svg"); }
 
-header {
-  margin: 0;
-  font-family: 'Birmingham', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 2px;
-}
+
+
+

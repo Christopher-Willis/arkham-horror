@@ -22,5 +22,49 @@
 }
 
 
+.override:link,.override:visited    {
+  /* Applies to all unvisited links */
+  border-radius: 8px;
+  border-style: double;
+  background: #C2B280;
+  text-decoration:  none;
+  color:            black;
+  font-family: 'Birmingham',sans-serif;
+  letter-spacing: 2px;
+  font-weight: bolder;
+ 
+  } 
 
+.override:hover,.override:active    {
+  /* Applies to links under the pointer */
+  background-color:            rgb(155, 142, 103);
+  } 
+
+
+
+
+header h1{
+  font-family: 'Birmingham',sans-serif;
+  letter-spacing: 2px;
+}
+
+header p{
+  text-transform: uppercase;
+
+}
+
+body {
+  background-color: black !important;
+
+
+}
+
+#root{
+  background-image: url('./assets/image/bruno-magalhaes-vianna-yog-sothoth.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain;
+  height: 100vh;
+}
 
