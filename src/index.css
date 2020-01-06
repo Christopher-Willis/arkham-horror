@@ -1,13 +1,16 @@
-body {
+
+@font-face {font-family: "Birmingham"; 
+  src: url("//db.onlinewebfonts.com/t/9049cb12d5c47bcddd434cf20d8ac6c1.eot"); 
+  src: url("//db.onlinewebfonts.com/t/9049cb12d5c47bcddd434cf20d8ac6c1.eot?#iefix") format("embedded-opentype"), 
+  url("//db.onlinewebfonts.com/t/9049cb12d5c47bcddd434cf20d8ac6c1.woff2") format("woff2"), 
+  url("//db.onlinewebfonts.com/t/9049cb12d5c47bcddd434cf20d8ac6c1.woff") format("woff"), 
+  url("//db.onlinewebfonts.com/t/9049cb12d5c47bcddd434cf20d8ac6c1.ttf") format("truetype"), 
+  url("//db.onlinewebfonts.com/t/9049cb12d5c47bcddd434cf20d8ac6c1.svg#Birmingham") format("svg"); }
+
+header {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Birmingham', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  letter-spacing: 2px;
 }
