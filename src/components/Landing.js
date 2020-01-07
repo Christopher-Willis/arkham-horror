@@ -7,19 +7,42 @@ import {Link} from "react-router-dom";
 
 function Landing() {
   return (
-      <Container fluid  className="text-center  h-100">
-        <Row className="flex-column   h-100">
-          <Col >
-            <Link className="override p-2" to="/NewCampaign">New Game</Link>
+      <Container fluid  className="text-center h-75">
+        <Row className="flex-column justify-content-around align-items-center h-100">
+          <Col xs={"auto"} className="">
+            <Link className="override" to="/NewCampaign">
+            <div className="buttonlookalike">
+              New Game
+            </div>
+            </Link>
           </Col>
-          <Col className="">
-            <Link className="override p-2" to="/">Load Game</Link>
+          <Col xs={"auto"} className="">
+            <Link className="override  " to="/">
+            <div className="buttonlookalike">
+              Load Game
+            </div>
+            </Link>
           </Col>
-          <Col className="text-center">
-            <Link className="override p-2" to="/">Standalone Scenario</Link>
+          <Col xs={"auto"} className="">
+            <Link className="override  " to="/">
+            <div className="buttonlookalike">
+              Standalone Scenario
+            </div>
+            </Link>
           </Col>
-          <Col className="text-center">
-            <Link className="override p-2" to="/">Chaos Bag</Link>
+          <Col xs={"auto"} className="">
+            <Link className="override " to="/">              
+              <div className="buttonlookalike">
+                Chaos Bag
+              </div>
+            </Link>
+          </Col>
+          <Col xs={"auto"} className="">
+            <Link className="override " to="/">
+              <div className="buttonlookalike">
+                Settings
+              </div>
+            </Link>
           </Col>
         </Row>
       </Container>

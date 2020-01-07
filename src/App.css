@@ -21,9 +21,7 @@
   }
 }
 
-
-.override:link,.override:visited    {
-  /* Applies to all unvisited links */
+.buttonlookalike{
   border-radius: 8px;
   border-style: double;
   background: #C2B280;
@@ -32,12 +30,27 @@
   font-family: 'Birmingham',sans-serif;
   letter-spacing: 2px;
   font-weight: bolder;
- 
+  min-width: 300px;
+  max-width: 300px;
+}
+
+.buttonlookalike:hover{
+  background-color:            rgb(155, 142, 103);
+}
+
+.buttonlookalike:active{
+  background-color:            rgb(155, 103, 103);
+}
+
+.override:link,.override:visited    {
+  /* Applies to all unvisited links */
+  text-decoration:  none;
+
   } 
 
 .override:hover,.override:active    {
   /* Applies to links under the pointer */
-  background-color:            rgb(155, 142, 103);
+  text-decoration:  none;
   } 
 
 

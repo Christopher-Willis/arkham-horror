@@ -6,7 +6,6 @@ import Col from 'react-bootstrap/Col'
 
 function Header() {
   return (
-    <div>
       <Container >
         <Row>
           <Col className="text-center mt-2">
@@ -19,8 +18,6 @@ function Header() {
           </Col>
         </Row>
       </Container>
-
-    </div>
   )
 }
 
