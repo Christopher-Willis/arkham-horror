@@ -30,7 +30,7 @@ class NewCampaign extends Component {
                 console.log(coreAndMythos + "in if")
                 return(
                     <Col xs={"auto"} className="">
-                        <Link className="override " to={"/"+coreAndMythos.code}>
+                        <Link className="override " to={"/campaign/"+coreAndMythos.code}>
                         <div className="buttonlookalike">
                             {coreAndMythos.code == "core" ? "Night of the Zealot" : coreAndMythos.name}
                         </div>

@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col'
 
 function Header() {
   return (
-      <Container >
+      <Container fluid className="m-0 p-0">
         <Row>
           <Col className="text-center mt-2">
           <h1 className="text-warning mt-2">
