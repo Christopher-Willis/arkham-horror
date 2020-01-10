@@ -6,12 +6,22 @@ import LoadCampaign from './components/LoadCampaign'
 import StandAlone from './components/StandAlone'
 import ChaosBag from './components/ChaosBag'
 import Settings from './components/Settings'
-
+import {useSelector, useDispatch} from 'react-redux'
 
 import HomePage from './pages/Home'
 
 function App() {
+  // const counter = useSelector(state => state.counter);
+  // const dispatch = useDispatch();
+  // hooks examples replaces connect and dispatch
+
   return (
+  <div>
+  {/* 
+  <h1>Counter : {counter} </h1>
+  <button onClick={(()=> dispatch({type:'INCREMENT'}))}>INCREMENT</button> 
+  hooks examples*/
+  }
 
     <Router>
       <Route path="/" exact component={HomePage} />
@@ -21,6 +31,7 @@ function App() {
       <Route path="/ChaosBag/" exact component={ChaosBag} />
       <Route path="/Settings/" exact component={Settings} />
     </Router>
+    </div>
   );
 }
 
