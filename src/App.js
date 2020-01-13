@@ -6,7 +6,6 @@ import LoadCampaign from './components/LoadCampaign'
 import StandAlone from './components/StandAlone'
 import ChaosBag from './components/ChaosBag'
 import Settings from './components/Settings'
-import {useSelector, useDispatch} from 'react-redux'
 
 import HomePage from './pages/Home'
 
