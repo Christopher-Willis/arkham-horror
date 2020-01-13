@@ -5,7 +5,7 @@ import Landing from '../components/Landing'
 
 function HomePage() {
   return (
-    <Container id="home-container" className="text-center background app-size-ratio"> 
+    <Container id="home-container" className="text-center background "> 
     
         <Header/>
         <Landing/>

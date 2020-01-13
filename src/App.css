@@ -7,6 +7,10 @@
   font-family: 'Birmingham',sans-serif;
   letter-spacing: 2px;
   font-weight: bolder;
+
+}
+
+.special-sizing{
   min-width: 200px;
   max-width: 300px;
 }
@@ -44,7 +48,8 @@
 }
 
 .font-auto-size{
-  font-size: xx-large;}
+  font-size: xx-large;
+}
 
 header p{
   text-transform: uppercase;
@@ -53,8 +58,6 @@ header p{
 
 body {
   background-color: black !important;
-
-
 }
 
 

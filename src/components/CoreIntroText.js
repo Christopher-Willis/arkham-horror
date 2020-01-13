@@ -1,12 +1,10 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container'
-import Col from 'react-bootstrap/Col'
-import Row from 'react-bootstrap/Row'
 
 
 function CoreIntroText() {
   return (
-    <Container id="" className="pt-5"> 
+    <Container id="" className=""> 
         <h1 className="spooky-text font-weight-bold mt-5 w-100 font-auto-size text-center">
             NIGHT OF THE ZEALOT
         </h1>

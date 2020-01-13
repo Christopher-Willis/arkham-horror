@@ -12,7 +12,7 @@ function CoreIntro() {
           <Col xs={"auto"} className="w-100 ">
             <CoreIntroText/>
           </Col>
-          <Col xs={"auto"}>
+          <Col xs={"auto"} className="w-100">
             <CoreIntroNav/>
           </Col>
         </Row>

@@ -27,9 +27,9 @@ const NewCampaign = () => {
                         return(
                         <Col xs={"auto"} key={coreAndMythos.code}>
                             <Link className="override " to={"/campaign/"+coreAndMythos.code+"/intro"}>
-                            <div className="buttonlookalike">
-                                {coreAndMythos.code === "core" ? "Night of the Zealot" : coreAndMythos.name}
-                            </div>
+                                <div className="buttonlookalike special-sizing">
+                                    {coreAndMythos.code === "core" ? "Night of the Zealot" : coreAndMythos.name}
+                                </div>
                             </Link>
                         </Col>)
                     }

@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import NewGame from './pages/NewGame'
 import CoreIntro from './pages/CoreIntro'
+import CoreSetup from './pages/CoreSetup'
 import LoadCampaign from './components/LoadCampaign'
 import StandAlone from './components/StandAlone'
 import ChaosBag from './components/ChaosBag'
@@ -31,6 +32,9 @@ function App() {
       <Route path="/ChaosBag/" exact component={ChaosBag} />
       <Route path="/Settings/" exact component={Settings} />
       <Route path="/campaign/core/intro/" exact component={CoreIntro} />
+      <Route path="/campaign/core/setup" exact component={CoreSetup} />
+
+     
    
     </Router>
     </div>
