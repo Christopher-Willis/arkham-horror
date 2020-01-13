@@ -38,6 +38,14 @@
   letter-spacing: 2px;
 }
 
+.arno-text{
+  font-family: 'Arno Pro Display',serif;
+  line-height: 99%;
+}
+
+.font-auto-size{
+  font-size: 7vw;}
+
 header p{
   text-transform: uppercase;
 
@@ -53,6 +61,14 @@ body {
 
 .background{
   background-image: url('./assets/image/bruno-magalhaes-vianna-yog-sothoth.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: contain ;
+}
+
+.background-scroll{
+  background-image: url('./assets/image/normal_screen_bg.png');
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center;
