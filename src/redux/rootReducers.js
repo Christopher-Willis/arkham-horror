@@ -1,15 +1,34 @@
-const intitialState = {
-    counter:0
+import { combineReducers } from 'redux'
+
+
+
+const games = (state=[], action) => {
+    if(action.type === "ADD_GAME"){
+        return [...state, action.value]
+    }
+    return state
 }
 
-function reducers(state=intitialState, action){
-    switch(action.type){
-        case 'INCREMENT':
-            return {counter:state.counter + 1};
-        default:
-            return state;
+const currentGame = (state={name:""}, action) => {
+    if(action.type === "CHANGE_GAME"){
+        if(action.value.name.length < 29){
+            return action.value
+        }
     }
+    return state
 }
+
+
+
+
+
+
+
+
+
+const reducers = combineReducers({
+    games,currentGame
+})
 
 
 
