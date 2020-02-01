@@ -52,6 +52,7 @@
   line-height: 99%;
 }
 
+
 .font-auto-size{
   font-size: xx-large;
 }
@@ -90,9 +91,24 @@ body {
   max-width: 100vw;
 }
 
-input {
+.camp-name-input {
   width: 100%;
   background: rgba(0, 0, 0, 0);
   border: none;
   outline: none;
+}
+
+
+.btn-faction-inactive{
+  background-color: #C2B280 !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-faction-active{
+  background-color: rgb(155, 142, 103) !important;
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
