@@ -52,6 +52,24 @@
   line-height: 99%;
 }
 
+.arno-bold-text {
+  font-family: 'Arno Pro Bold',serif;
+  line-height: 98%;
+}
+
+.arno-text2{
+  font-family: 'Arno Pro Display',serif;
+  font-size: 16px;
+  line-height: 80%;
+}
+
+.line-98 {
+  line-height: 98%;
+}
+
+.fit-content{
+  width: fit-content;
+}
 
 .font-auto-size{
   font-size: xx-large;
@@ -62,11 +80,24 @@ header p{
 
 }
 
+.player-model .modal-content{
+  background-image: url("./assets/image/dialog_screen_bg.png");
+  background-size: 100% 100%;
+}
+
 body {
   background-color: black !important;
 }
 
+.icon-size{
+  height: 16px;
+  width: 16px;
+}
 
+.icon-investigator{
+  height: 23px;
+  width: 23px;
+}
 
 .background{
   background-image: url('./assets/image/bruno-magalhaes-vianna-yog-sothoth.jpg');
