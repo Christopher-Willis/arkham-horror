@@ -5,7 +5,11 @@ import Row from 'react-bootstrap/Row'
 import CoreIntroText from '../components/CoreIntroText'
 import CoreIntroNav from '../components/CoreIntroNav'
 
-function CoreIntro() {
+function CoreIntro(props) {
+  const { history } = props;
+
+  console.log(history)
+
   return (
     <Container id="home-container" className="background-scroll"> 
         <Row className="flex-column justify-content-between align-items-center h-100">

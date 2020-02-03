@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 
 
-const NewCampaign = () => {
+const NewCampaign = (props) => {
 
     const [cardSets, setCardSets] = useState([]);
+    const { history } = props;
 
+    console.log(history)
     async function fetchData() {
         const res = await fetch("https://arkhamdb.com/api/public/packs/");
     res
@@ -19,6 +21,7 @@ const NewCampaign = () => {
     useEffect(() => {
         fetchData();
     },[]);
+
     return(
         <Container fluid  className="text-center h-75">
             <Row className="flex-column justify-content-around align-items-center h-100">
@@ -26,7 +29,7 @@ const NewCampaign = () => {
                     if(coreAndMythos.position === 1 && coreAndMythos.cycle_position < 50){
                         return(
                         <Col xs={"auto"} key={coreAndMythos.code}>
-                            <Link className="override " to={"/campaign/"+coreAndMythos.code+"/intro"}>
+                            <Link onClick={() => {history.push("/campaign/"+coreAndMythos.code+"/intro");}} className="override " to={"/campaign/"+coreAndMythos.code+"/intro"}>
                                 <div className="buttonlookalike special-sizing">
                                     {coreAndMythos.code === "core" ? "Night of the Zealot" : coreAndMythos.name}
                                 </div>
@@ -41,4 +44,4 @@ const NewCampaign = () => {
 
 }
 
-export default NewCampaign;
+export default withRouter(NewCampaign);

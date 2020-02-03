@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import NewGame from './pages/NewGame'
 import CoreIntro from './pages/CoreIntro'
 import CoreSetup from './pages/CoreSetup'
@@ -11,18 +11,14 @@ import Settings from './components/Settings'
 
 import HomePage from './pages/Home'
 
-function App() {
-  // const counter = useSelector(state => state.counter);
-  // const dispatch = useDispatch();
-  // hooks examples replaces connect and dispatch
-
+function App(props) {
+  const { history } = props;
+    window.addEventListener("popstate", () => {
+      history.go(1);
+  });
+// integrating disabling of back changes from here https://medium.com/@subwaymatch/disabling-back-button-in-react-with-react-router-v5-34bb316c99d7
   return (
   <div>
-  {/* 
-  <h1>Counter : {counter} </h1>
-  <button onClick={(()=> dispatch({type:'INCREMENT'}))}>INCREMENT</button> 
-  hooks examples*/
-  }
 
     <Router>
       <Route path="/" exact component={HomePage} />
@@ -41,4 +37,4 @@ function App() {
   );
 }
 
-export default App;
+export default withRouter(App);
