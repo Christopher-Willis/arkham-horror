@@ -40,7 +40,6 @@ function CoreSetup() {
 
 
     const bagChange = (newBag) => {
-        console.log("Bag Change: ",newBag );
         setBagSelected(newBag);
     }
 
