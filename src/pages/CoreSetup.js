@@ -18,7 +18,8 @@ import checked from '../assets/image/checkbox_on_background.png'
 import unchecked from '../assets/image/checkbox_off_background.png'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
-import ChaosSetupModal from '../modals/chaosSetupModal'
+import ChaosSetupModal from '../modals/ChaosSetupModal'
+import ChaosBagData from '../assets/chaos_bag/core.json'
 
 function CoreSetup() {
     const CurrentGameData = useSelector(state => state.currentGame)
@@ -27,6 +28,7 @@ function CoreSetup() {
     const [currentTeam,setCurrentTeam] = useState([])
     const [teamModal, setTeamModal] = useState(false);
     const [chaosModal, setChaosModal] = useState(false);
+    const [bagSelected, setBagSelected] = useState(1);
 
 
     const handleCloseTeam = () => setTeamModal(false);
@@ -36,6 +38,11 @@ function CoreSetup() {
     }
     const handleShowChaos = () => setChaosModal(true);
 
+
+    function bagChange(newBag) {
+        console.log("Bag Change: ",newBag );
+        setBagSelected(newBag);
+    }
 
     const investigatorChange = val => setSelectedInvetigatorGroup(val);
     const changeTeam = (investagorToAddOrRemove) => {
@@ -66,9 +73,9 @@ function CoreSetup() {
             }else{
                 return [...accumulator,currentValue]
             }
-        },[]) 
+    },[]) 
 
-
+    console.log("In Core Setup: ",bagSelected)
 
     return (
         <Container id="home-container" className="background-scroll "> 
@@ -137,7 +144,7 @@ function CoreSetup() {
             </Row>
             {currentTeam.map((member,index) => {
                 return (
-                    <Row className="justify-content-around my-1">
+                    <Row key={index} className="justify-content-around my-1">
                         <Col>
                             <p className="arno-bold-text m-0 font-weight-bolder" key={index}>{member.cardName}</p>
                         </Col>   
@@ -170,7 +177,13 @@ function CoreSetup() {
                 </Button>
                 </Modal.Footer>
             </Modal>
-            <ChaosSetupModal chaosModalValue={chaosModal} setChaosClose={() => handleCloseChaos()}  />
+            <ChaosSetupModal 
+                chaosModalValue={chaosModal} 
+                setChaosClose={() => handleCloseChaos()} 
+                bagData={ChaosBagData} 
+                bagSelected={bagSelected} 
+                bagChange={bagChange}
+            />
             {/* <Modal centered className="player-modal" show={chaosModal} onHide={handleCloseChaos}>
                 <Modal.Header closeButton>
                 <Modal.Title>Default Chaos Bag</Modal.Title>
