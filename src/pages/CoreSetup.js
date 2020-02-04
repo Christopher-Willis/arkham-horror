@@ -39,7 +39,7 @@ function CoreSetup() {
     const handleShowChaos = () => setChaosModal(true);
 
 
-    function bagChange(newBag) {
+    const bagChange = (newBag) => {
         console.log("Bag Change: ",newBag );
         setBagSelected(newBag);
     }
@@ -182,7 +182,7 @@ function CoreSetup() {
                 setChaosClose={() => handleCloseChaos()} 
                 bagData={ChaosBagData} 
                 bagSelected={bagSelected} 
-                bagChange={bagChange}
+                bagChange={(val) => bagChange(val)}
             />
             {/* <Modal centered className="player-modal" show={chaosModal} onHide={handleCloseChaos}>
                 <Modal.Header closeButton>
