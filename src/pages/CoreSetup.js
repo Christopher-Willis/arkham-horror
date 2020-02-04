@@ -1,4 +1,4 @@
-import React, { useState,useEffect }  from 'react';
+import React, { useState }  from 'react';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
@@ -18,20 +18,23 @@ import checked from '../assets/image/checkbox_on_background.png'
 import unchecked from '../assets/image/checkbox_off_background.png'
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import ChaosSetupModal from '../modals/chaosSetupModal'
 
 function CoreSetup() {
     const CurrentGameData = useSelector(state => state.currentGame)
     const dispatch = useDispatch()
     const [selectedInvetigatorGroup,setSelectedInvetigatorGroup] = useState("guardian")
     const [currentTeam,setCurrentTeam] = useState([])
-    const [teamModel, setTeamModel] = useState(false);
-    const [chaosModel, setchaosModel] = useState(false);
+    const [teamModal, setTeamModal] = useState(false);
+    const [chaosModal, setChaosModal] = useState(false);
 
 
-    const handleCloseTeam = () => setTeamModel(false);
-    const handleShowTeam = () => setTeamModel(true);
-    const handleCloseChaos = () => setTeamModel(false);
-    const handleShowChaos = () => setTeamModel(true);
+    const handleCloseTeam = () => setTeamModal(false);
+    const handleShowTeam = () => setTeamModal(true);
+    const handleCloseChaos = () => {
+        setChaosModal(false);
+    }
+    const handleShowChaos = () => setChaosModal(true);
 
 
     const investigatorChange = val => setSelectedInvetigatorGroup(val);
@@ -148,14 +151,14 @@ function CoreSetup() {
             })}
             <Row>
                 <Col>
-                    <div className="buttonlookalike text-center">
+                    <div style={{cursor: 'pointer'}} onClick={()=>handleShowChaos()} className="buttonlookalike text-center">
                         Default Chaos Bag
                     </div>
                 </Col>
             </Row>
-            <Modal centered className="player-model" show={teamModel} onHide={handleCloseTeam}>
+            <Modal centered className="player-modal" show={teamModal} onHide={handleCloseTeam}>
                 <Modal.Header closeButton>
-                <Modal.Title>Character</Modal.Title>
+                <Modal.Title>Investigator</Modal.Title>
                 </Modal.Header>
                 <Modal.Body>Coming Soon</Modal.Body>
                 <Modal.Footer>
@@ -167,6 +170,21 @@ function CoreSetup() {
                 </Button>
                 </Modal.Footer>
             </Modal>
+            <ChaosSetupModal chaosModalValue={chaosModal} setChaosClose={() => handleCloseChaos()}  />
+            {/* <Modal centered className="player-modal" show={chaosModal} onHide={handleCloseChaos}>
+                <Modal.Header closeButton>
+                <Modal.Title>Default Chaos Bag</Modal.Title>
+                </Modal.Header>
+                <Modal.Body>Coming Soon</Modal.Body>
+                <Modal.Footer>
+                <Button variant="secondary" onClick={handleCloseChaos}>
+                    Close
+                </Button>
+                <Button variant="primary" onClick={handleCloseChaos}>
+                    Save Changes
+                </Button>
+                </Modal.Footer>
+            </Modal> */}
         </Container>
         
   )

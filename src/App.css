@@ -80,7 +80,7 @@ header p{
 
 }
 
-.player-model .modal-content{
+.player-modal .modal-content{
   background-image: url("./assets/image/dialog_screen_bg.png");
   background-size: 100% 100%;
 }
