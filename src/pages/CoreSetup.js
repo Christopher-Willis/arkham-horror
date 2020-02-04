@@ -75,8 +75,6 @@ function CoreSetup() {
             }
     },[]) 
 
-    console.log("In Core Setup: ",bagSelected)
-
     return (
         <Container id="home-container" className="background-scroll "> 
             <Row>

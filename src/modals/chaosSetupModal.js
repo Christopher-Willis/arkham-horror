@@ -54,9 +54,6 @@ function ChaosSetupModal(props) {
 
     const saveChaosBag = () => {
         props.bagChange(localBagSelected)
-        console.log("Local Bag: ",localBagSelected)
-        console.log("Core Setup Bag in Modal: ",localBagSelected)
-
         props.setChaosClose()
     }
 
