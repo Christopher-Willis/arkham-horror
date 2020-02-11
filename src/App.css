@@ -10,6 +10,11 @@
 
 }
 
+.bottom{
+  position: absolute;
+  bottom: 0px;
+}
+
 .special-sizing{
   min-width: 200px;
   max-width: 300px;
@@ -34,7 +39,9 @@
   text-decoration:  none;
   } 
 
-
+.add-pointer {
+  cursor: pointer;
+}
 
 
 .spooky-text{
@@ -121,6 +128,8 @@ body {
   width: calc(100vh * 1920 / 3236);
   max-width: 100vw;
 }
+
+
 
 .camp-name-input {
   width: 100%;

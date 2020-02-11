@@ -4,11 +4,11 @@ import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import NewGame from './pages/NewGame'
 import CoreIntro from './pages/CoreIntro'
 import CoreSetup from './pages/CoreSetup'
+import CorePartOne from './pages/CorePartOne'
 import LoadCampaign from './components/LoadCampaign'
 import StandAlone from './components/StandAlone'
 import ChaosBag from './components/ChaosBag'
 import Settings from './components/Settings'
-
 import HomePage from './pages/Home'
 
 function App(props) {
@@ -29,6 +29,8 @@ function App(props) {
       <Route path="/Settings/" exact component={Settings} />
       <Route path="/campaign/core/intro/" exact component={CoreIntro} />
       <Route path="/campaign/core/setup" exact component={CoreSetup} />
+      <Route path="/campaign/core/TheGathering" exact component={CorePartOne} />
+
 
      
    

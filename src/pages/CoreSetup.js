@@ -20,6 +20,8 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import ChaosSetupModal from '../modals/ChaosSetupModal'
 import ChaosBagData from '../assets/chaos_bag/core.json'
+import {Link} from "react-router-dom";
+
 
 function CoreSetup() {
     const CurrentGameData = useSelector(state => state.currentGame)
@@ -75,7 +77,7 @@ function CoreSetup() {
     },[]) 
 
     return (
-        <Container id="home-container" className="background-scroll "> 
+        <Container id="home-container" className="background-scroll position-relative"> 
             <Row>
                 <h1 className="spooky-text font-weight-bold mt-5 w-100 font-auto-size text-center">
                     NIGHT OF THE ZEALOT
@@ -124,7 +126,7 @@ function CoreSetup() {
                         if( InvestigatorCard.type_code && InvestigatorCard.type_code === "investigator" && InvestigatorCard.faction_code===selectedInvetigatorGroup){
                             return (
                                 <Row key={index}>
-                                    <Col xs={"auto"} onClick={()=>changeTeam(InvestigatorCard.name)} className=" d-flex align-items-center">
+                                    <Col xs={"auto"} onClick={()=>changeTeam(InvestigatorCard.name)} className=" d-flex align-items-center add-pointer">
                                         <Image className="icon-investigator" src={checkDisabledEnabled(InvestigatorCard.name)}/>
                                         <p className="arno-text2 mx-1 my-0 p-0 pt-1" >{InvestigatorCard.name}</p>
                                     </Col>
@@ -155,9 +157,26 @@ function CoreSetup() {
             })}
             <Row>
                 <Col>
-                    <div style={{cursor: 'pointer'}} onClick={()=>handleShowChaos()} className="buttonlookalike text-center">
+                    <div onClick={()=>handleShowChaos()} className="buttonlookalike text-center add-pointer mt-2">
                         Default Chaos Bag
                     </div>
+                </Col>
+            </Row>
+            <Row className="justify-content-between bottom mb-4 w-100">
+                <Col xs={"auto"} className="d-flex align-items-end">
+                    <Link to="/campaign/core/intro/">
+                        <div className="buttonlookalike text-center add-pointer mt-2 px-2 ">
+                            Back
+                        </div>
+                    </Link>
+                    
+                </Col>
+                <Col xs={"auto"} >
+                    <Link to="/campaign/core/TheGathering" className="justify-content-end d-flex">
+                        <div className="buttonlookalike text-center add-pointer mt-2 px-2 w-75 ">
+                            Start Campaign
+                        </div>
+                    </Link>
                 </Col>
             </Row>
             <Modal centered className="player-modal" show={teamModal} onHide={handleCloseTeam}>
