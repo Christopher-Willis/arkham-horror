@@ -6,7 +6,7 @@ import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import Image from 'react-bootstrap/Image'
 import {useSelector,useDispatch} from 'react-redux'
-import {ChangeCurrentGame} from '../redux/actions'
+import {ChangeCurrentGame,AddNewGame,AddChaosBag,AddInvestigators} from '../redux/actions'
 import InvestigatorList from '../assets/card_data/investigators.json'
 import gaurdianPic from '../assets/image/guardian.png'
 import mysticPic from '../assets/image/mystic.png'
@@ -20,11 +20,11 @@ import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
 import ChaosSetupModal from '../modals/ChaosSetupModal'
 import ChaosBagData from '../assets/chaos_bag/core.json'
-import {Link} from "react-router-dom";
+import {Link} from "react-router-dom"; 
 
-
-function CoreSetup() {
+function CoreSetup(props) {
     const CurrentGameData = useSelector(state => state.currentGame)
+    const allGames = useSelector(state => state.games)
     const dispatch = useDispatch()
     const [selectedInvetigatorGroup,setSelectedInvetigatorGroup] = useState("guardian")
     const [currentTeam,setCurrentTeam] = useState([])
@@ -32,6 +32,26 @@ function CoreSetup() {
     const [chaosModal, setChaosModal] = useState(false);
     const [bagSelected, setBagSelected] = useState(1);
 
+
+    const confirmSubmit = () => {
+        if(CurrentGameData.gameName === ""){
+            alert("Enter Game Name")
+        }else{
+            if(allGames[CurrentGameData.gameName] !== undefined){
+                alert("Game Name taken, try different name")
+            }else{
+                if(currentTeam.length<1){
+                    alert("Must have at least one investigator")
+
+                }else{
+                    dispatch(AddNewGame(CurrentGameData.gameName))
+                    dispatch(AddChaosBag(CurrentGameData.gameName,ChaosBagData[bagSelected]))
+                    dispatch(AddInvestigators(CurrentGameData.gameName,currentTeam))
+                    props.history.push('/campaign/core/TheGathering' )
+                }
+            }
+        }
+    }
 
     const handleCloseTeam = () => setTeamModal(false);
     const handleShowTeam = () => setTeamModal(true);
@@ -86,13 +106,13 @@ function CoreSetup() {
             <Row>            
                 <Col>
                     <h6 className="arno-text font-weight-bold" >
-                        {`Campaign Name: ` + CurrentGameData.name}
+                        {`Campaign Name: ` + CurrentGameData.gameName}
                     </h6>
                     <input 
                     className="wolgasttwo-text camp-name-input" 
                     placeholder="Enter Campaign Name Here"
-                    value = {CurrentGameData.name}
-                    onChange={e => dispatch(ChangeCurrentGame({name:e.target.value}))}
+                    value = {CurrentGameData.gameName}
+                    onChange={e => dispatch(ChangeCurrentGame(e.target.value))}
                     />
                 </Col>                
             </Row>
@@ -171,12 +191,10 @@ function CoreSetup() {
                     </Link>
                     
                 </Col>
-                <Col xs={"auto"} >
-                    <Link to="/campaign/core/TheGathering" className="justify-content-end d-flex">
-                        <div className="buttonlookalike text-center add-pointer mt-2 px-2 w-75 ">
-                            Start Campaign
-                        </div>
-                    </Link>
+                <Col xs={"auto"} className="d-flex justify-content-end " >
+                    <div onClick={confirmSubmit} className="buttonlookalike text-center add-pointer mt-2 px-2 w-75 ">
+                        Start Campaign
+                    </div>
                 </Col>
             </Row>
             <Modal centered className="player-modal" show={teamModal} onHide={handleCloseTeam}>
