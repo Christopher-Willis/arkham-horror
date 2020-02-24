@@ -7,6 +7,18 @@
   font-family: 'Birmingham',sans-serif;
   letter-spacing: 2px;
   font-weight: bolder;
+}
+
+.buttonlookalike-disabled{
+  border-radius: 8px;
+  border-style: double;
+  background: #C2B280;
+  text-decoration:  none;
+  color:            black;
+  font-family: 'Birmingham',sans-serif;
+  letter-spacing: 2px;
+  font-weight: bolder;
+  filter:grayscale(90%);
 
 }
 
@@ -27,6 +39,17 @@
 .buttonlookalike:active{
   background-color:            rgb(155, 103, 103);
 }
+
+.image-darken:hover{
+  filter: brightness(75%);
+}
+
+.image-darken:active{
+  filter: brightness(25%)  saturate(50) hue-rotate(30deg)  ;
+  
+}
+
+
 
 .override:link,.override:visited    {
   /* Applies to all unvisited links */
@@ -62,6 +85,10 @@
 .arno-bold-text {
   font-family: 'Arno Pro Bold',serif;
   line-height: 98%;
+}
+
+.small-padding-top{
+  padding-top: 2px;
 }
 
 .arno-text2{

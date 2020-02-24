@@ -23,16 +23,29 @@ import ChaosBagData from '../assets/chaos_bag/core.json'
 import {Link} from "react-router-dom"; 
 
 function CoreSetup(props) {
+    // all store data
+
+    // the way we keep track of what game is loaded
     const CurrentGameData = useSelector(state => state.currentGame)
+    // all games saved, used to make sure we don't duplicate game saves
     const allGames = useSelector(state => state.games)
     const dispatch = useDispatch()
+    // local data store before saving to store
+
+    // used to control investigator menu selector
     const [selectedInvetigatorGroup,setSelectedInvetigatorGroup] = useState("guardian")
+    // who we actually have selcted to be on the team, will save to store
     const [currentTeam,setCurrentTeam] = useState([])
-    const [teamModal, setTeamModal] = useState(false);
-    const [chaosModal, setChaosModal] = useState(false);
+    // which chaos bag we will store, default to standard
     const [bagSelected, setBagSelected] = useState(1);
 
 
+    // modal controlers 
+    const [teamModal, setTeamModal] = useState(false);
+    const [chaosModal, setChaosModal] = useState(false);
+
+
+    // rudamentary error handeling for moving to next page
     const confirmSubmit = () => {
         if(CurrentGameData.gameName === ""){
             alert("Enter Game Name")
@@ -47,37 +60,45 @@ function CoreSetup(props) {
                     dispatch(AddNewGame(CurrentGameData.gameName))
                     dispatch(AddChaosBag(CurrentGameData.gameName,ChaosBagData[bagSelected]))
                     dispatch(AddInvestigators(CurrentGameData.gameName,currentTeam))
+                    // how we move to next page when we don't have a <Link> event to use
                     props.history.push('/campaign/core/TheGathering' )
                 }
             }
         }
     }
 
+    // handel modal for editing team member information, unimplemented feature
     const handleCloseTeam = () => setTeamModal(false);
     const handleShowTeam = () => setTeamModal(true);
+
+    // chaos modal controller
     const handleCloseChaos = () => {
         setChaosModal(false);
     }
     const handleShowChaos = () => setChaosModal(true);
 
-
+    // changes chaos bag
     const bagChange = (newBag) => {
         setBagSelected(newBag);
     }
 
+    // value holder for the view controller for investigators grouping
     const investigatorChange = val => setSelectedInvetigatorGroup(val);
+
+    // how team members are added and removed via the button groups
     const changeTeam = (investagorToAddOrRemove) => {
         const isSelected = currentTeam.findIndex((invesigatorItem)=>invesigatorItem.cardName===investagorToAddOrRemove)
         if(currentTeam.length < 4 && isSelected === -1 ){
             setCurrentTeam([...currentTeam,{"cardName":investagorToAddOrRemove}])
         }else if(isSelected > -1) {
+            // the combersome way to remove people from the team to avoid state mutation
             const tempState = currentTeam.slice(0)
             tempState.splice(isSelected,1)
             setCurrentTeam(tempState)
         }
     }
    
-
+    // janky way to control the check box rather than crazy css for custom input boxes. Using images and text was easier than that mess
     const checkDisabledEnabled = (checkbox) => {
         const searched = currentTeam.find(inTeam => inTeam.cardName === checkbox)
         if(searched === undefined){
@@ -87,6 +108,8 @@ function CoreSetup(props) {
         }
     }
 
+    // data actually includes the same investigator mutiple times from different expansions (mostly the books). We just need one as stats are the same. Might need a way to choose
+    // different pictures later if we ever get that far
     const uniqueInvestigatorList =
         InvestigatorList.reduce((accumulator, currentValue) => {
             if(accumulator.find(element => element.name === currentValue.name)){
@@ -153,6 +176,7 @@ function CoreSetup(props) {
                                 </Row>
                             )
                         }
+                        return ""
                     })}
                 </Col>
             </Row>

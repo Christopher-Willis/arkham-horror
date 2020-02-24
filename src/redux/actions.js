@@ -27,3 +27,44 @@ export function AddInvestigators(gameName,investigatorData){
     data:investigatorData
   }
 }
+
+
+export function addPhysicalTrama(gameName,value,index,missionIndex){
+  return{
+    type:"ADD_PHYSICAL_TRAMA",
+    gameName:gameName,
+    value:value,
+    index:index,
+    missionIndex:missionIndex
+  }
+}
+
+export function addMentalTrama(gameName,value,index,missionIndex){
+  return{
+    type:"ADD_MENTAL_TRAMA",
+    gameName:gameName,
+    value:value,
+    index:index,
+    missionIndex:missionIndex
+  }
+}
+
+export function addTotalXP(gameName,value,index,missionIndex){
+  return{
+    type:"ADD_TOTAL_XP",
+    gameName:gameName,
+    value:value,
+    index:index,
+    missionIndex:missionIndex
+  }
+}
+
+export function addSpentXP(gameName,value,index,missionIndex){
+  return{
+    type:"ADD_SPENT_XP",
+    gameName:gameName,    
+    value:value,
+    index:index,
+    missionIndex:missionIndex
+  }
+}
