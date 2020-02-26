@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/arkham-horror/static/css/main.4a7dcf66.chunk.css",
-    "main.js": "/arkham-horror/static/js/main.74b9991e.chunk.js",
-    "main.js.map": "/arkham-horror/static/js/main.74b9991e.chunk.js.map",
+    "main.js": "/arkham-horror/static/js/main.c399db45.chunk.js",
+    "main.js.map": "/arkham-horror/static/js/main.c399db45.chunk.js.map",
     "runtime-main.js": "/arkham-horror/static/js/runtime-main.4f7c4520.js",
     "runtime-main.js.map": "/arkham-horror/static/js/runtime-main.4f7c4520.js.map",
     "static/css/2.17e5ed98.chunk.css": "/arkham-horror/static/css/2.17e5ed98.chunk.css",
     "static/js/2.2a74301b.chunk.js": "/arkham-horror/static/js/2.2a74301b.chunk.js",
     "static/js/2.2a74301b.chunk.js.map": "/arkham-horror/static/js/2.2a74301b.chunk.js.map",
     "index.html": "/arkham-horror/index.html",
-    "precache-manifest.7f051c8a0afdfaa14ba4bcafc0e57bf5.js": "/arkham-horror/precache-manifest.7f051c8a0afdfaa14ba4bcafc0e57bf5.js",
+    "precache-manifest.e9508ab5805fea7fcfde26f540d588d2.js": "/arkham-horror/precache-manifest.e9508ab5805fea7fcfde26f540d588d2.js",
     "service-worker.js": "/arkham-horror/service-worker.js",
     "static/css/2.17e5ed98.chunk.css.map": "/arkham-horror/static/css/2.17e5ed98.chunk.css.map",
     "static/css/main.4a7dcf66.chunk.css.map": "/arkham-horror/static/css/main.4a7dcf66.chunk.css.map",
@@ -39,6 +39,6 @@
     "static/css/2.17e5ed98.chunk.css",
     "static/js/2.2a74301b.chunk.js",
     "static/css/main.4a7dcf66.chunk.css",
-    "static/js/main.74b9991e.chunk.js"
+    "static/js/main.c399db45.chunk.js"
   ]
 }

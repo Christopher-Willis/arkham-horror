@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c5f7d2639b04cd3e4e8499bbcdd09186",
+    "revision": "ae1c615704aff8029229dcc48c928928",
     "url": "/arkham-horror/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/arkham-horror/static/css/2.17e5ed98.chunk.css"
   },
   {
-    "revision": "5964615174afa77702df",
+    "revision": "8082ba10f295fb87d533",
     "url": "/arkham-horror/static/css/main.4a7dcf66.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/arkham-horror/static/js/2.2a74301b.chunk.js.LICENSE"
   },
   {
-    "revision": "5964615174afa77702df",
-    "url": "/arkham-horror/static/js/main.74b9991e.chunk.js"
+    "revision": "8082ba10f295fb87d533",
+    "url": "/arkham-horror/static/js/main.c399db45.chunk.js"
   },
   {
     "revision": "11b87c9f9d4b6cb84b45",
