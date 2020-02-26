@@ -21,7 +21,7 @@ function App(props) {
   <div>
 
     <Router>
-      <Route path="/" exact component={HomePage} />
+      <Route path={process.env.PUBLIC_URL + "/"} exact component={HomePage} />
       <Route path="/NewCampaign" exact component={NewGame} />
       <Route path="/LoadCampaign/" exact component={LoadCampaign} />
       <Route path="/StandAlone/" exact component={StandAlone} />
