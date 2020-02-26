@@ -1,0 +1,26 @@
+{
+    "easy":
+    {
+        "skull":"-X. X is the number of Ghoul enemies at your location.",
+        "cultist":"-1. If you fail, take 1 horror.",
+        "tablets":"-2. If there is a Ghoul enemy at your location, take 1 damage."
+    },
+    "standard":
+    {
+        "skull":"-X. X is the number of Ghoul enemies at your location.",
+        "cultist":"-1. If you fail, take 1 horror.",
+        "tablets":"-2. If there is a Ghoul enemy at your location, take 1 damage." 
+    },
+    "hard":
+    {
+        "skull":"-2. If you fail, after this skill test, search the encounter deck and discard pile for a Ghoul enemy, and draw it. Shuffle the encounter deck.",
+        "cultist":"Reveal another token. If you fail, take 2 horror.",
+        "tablets":"-4. If there is a Ghoul enemy at your location, take 1 damage and 1 horror." 
+    },
+    "expert":
+    {
+        "skull":"-2. If you fail, after this skill test, search the encounter deck and discard pile for a Ghoul enemy, and draw it. Shuffle the encounter deck.",
+        "cultist":"Reveal another token. If you fail, take 2 horror.",
+        "tablets":"-4. If there is a Ghoul enemy at your location, take 1 damage and 1 horror." 
+    }
+}

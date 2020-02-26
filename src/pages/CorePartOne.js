@@ -10,6 +10,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import {addPhysicalTrama,addMentalTrama,addTotalXP,addSpentXP} from '../redux/actions'
 import cloneDeep from 'lodash/cloneDeep';
 import {Link} from "react-router-dom"; 
+import ChaosDrawModal from '../modals/ChaosDrawToken'
 
 
 function CorePartOne(props) {
@@ -17,8 +18,10 @@ function CorePartOne(props) {
     const gameData = useSelector(state => state.games[CurrentGameName.gameName])
     const dispatch = useDispatch()
     const [usedXP, setUsedXP] = useState([])
+    const [chaosModal,setChaosModal] = useState(false)
+
    
-      // if there is no current game being played, go back to main page to select a game
+    // if there is no current game being played, go back to main page to select a game
     const isGame = () => {
         // current game is how we know a game is selected, without one, push back to main, this push log is how we control routes without react router on click events
         // and with our back button history disable code
@@ -93,6 +96,7 @@ function CorePartOne(props) {
             {
                 // generates all our content for investigator stats. need to seperate this code out as it will be reused a lot
                 gameData && gameData.investigators && gameData.physicalTrama ? gameData.investigators.initial.map( (investigator,index) => {
+                    console.log(gameData)
                     return (
                         <Container key={index}>
                             <Row>
@@ -200,7 +204,7 @@ function CorePartOne(props) {
             </Row>
             <Row className="my-2">
                 <Col>
-                    <div className="text-uppercase buttonlookalike text-center small font-weight-bold">
+                    <div className="text-uppercase buttonlookalike text-center small font-weight-bold" onClick={()=> setChaosModal(true)}>
                         Chaos Bag
                     </div>
                 </Col>
@@ -226,7 +230,8 @@ function CorePartOne(props) {
                     </div>
                 </Col>
             </Row>
-        </Container>
+            <ChaosDrawModal chaosDrawValue={chaosModal} setChaosModal={setChaosModal} />
+        </Container >
     )
 }
 
