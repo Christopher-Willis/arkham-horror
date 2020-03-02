@@ -96,7 +96,6 @@ function CorePartOne(props) {
             {
                 // generates all our content for investigator stats. need to seperate this code out as it will be reused a lot
                 gameData && gameData.investigators && gameData.physicalTrama ? gameData.investigators.initial.map( (investigator,index) => {
-                    console.log(gameData)
                     return (
                         <Container key={index}>
                             <Row>

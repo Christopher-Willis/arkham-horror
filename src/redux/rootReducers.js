@@ -13,7 +13,7 @@ const games = (state={}, action) => {
     if(action.type === "ADD_DEFAULT_CHAOS_BAG"){
         const temp = cloneDeep(state)
         temp[action.value]["chaosBag"]={}
-        temp[action.value]["chaosBag"]["initial"] = {...action.data.bag}
+        temp[action.value]["chaosBag"]["initial"] = [...action.data.bag]
         return temp
     }
     if(action.type === "ADD_INVESTGATORS"){

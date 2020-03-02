@@ -22,6 +22,10 @@
 
 }
 
+.min-height-revealed{
+  min-height: 63px;
+}
+
 .bottom{
   position: absolute;
   bottom: 0px;
