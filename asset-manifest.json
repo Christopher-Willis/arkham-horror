@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/arkham-horror/static/css/main.4a7dcf66.chunk.css",
-    "main.js": "/arkham-horror/static/js/main.c399db45.chunk.js",
-    "main.js.map": "/arkham-horror/static/js/main.c399db45.chunk.js.map",
+    "main.css": "/arkham-horror/static/css/main.224dbd10.chunk.css",
+    "main.js": "/arkham-horror/static/js/main.a89d0401.chunk.js",
+    "main.js.map": "/arkham-horror/static/js/main.a89d0401.chunk.js.map",
     "runtime-main.js": "/arkham-horror/static/js/runtime-main.4f7c4520.js",
     "runtime-main.js.map": "/arkham-horror/static/js/runtime-main.4f7c4520.js.map",
     "static/css/2.17e5ed98.chunk.css": "/arkham-horror/static/css/2.17e5ed98.chunk.css",
-    "static/js/2.2a74301b.chunk.js": "/arkham-horror/static/js/2.2a74301b.chunk.js",
-    "static/js/2.2a74301b.chunk.js.map": "/arkham-horror/static/js/2.2a74301b.chunk.js.map",
+    "static/js/2.6c9115bc.chunk.js": "/arkham-horror/static/js/2.6c9115bc.chunk.js",
+    "static/js/2.6c9115bc.chunk.js.map": "/arkham-horror/static/js/2.6c9115bc.chunk.js.map",
     "index.html": "/arkham-horror/index.html",
-    "precache-manifest.e9508ab5805fea7fcfde26f540d588d2.js": "/arkham-horror/precache-manifest.e9508ab5805fea7fcfde26f540d588d2.js",
+    "precache-manifest.1d2cefe721083ff91ee5eddc3c79577a.js": "/arkham-horror/precache-manifest.1d2cefe721083ff91ee5eddc3c79577a.js",
     "service-worker.js": "/arkham-horror/service-worker.js",
     "static/css/2.17e5ed98.chunk.css.map": "/arkham-horror/static/css/2.17e5ed98.chunk.css.map",
-    "static/css/main.4a7dcf66.chunk.css.map": "/arkham-horror/static/css/main.4a7dcf66.chunk.css.map",
-    "static/js/2.2a74301b.chunk.js.LICENSE": "/arkham-horror/static/js/2.2a74301b.chunk.js.LICENSE",
+    "static/css/main.224dbd10.chunk.css.map": "/arkham-horror/static/css/main.224dbd10.chunk.css.map",
+    "static/js/2.6c9115bc.chunk.js.LICENSE": "/arkham-horror/static/js/2.6c9115bc.chunk.js.LICENSE",
     "static/media/App.css": "/arkham-horror/static/media/normal_screen_bg.ea5b101b.png",
     "static/media/guardian.png": "/arkham-horror/static/media/guardian.ff413f85.png",
     "static/media/mystic.png": "/arkham-horror/static/media/mystic.06a54c79.png",
@@ -37,8 +37,8 @@
   "entrypoints": [
     "static/js/runtime-main.4f7c4520.js",
     "static/css/2.17e5ed98.chunk.css",
-    "static/js/2.2a74301b.chunk.js",
-    "static/css/main.4a7dcf66.chunk.css",
-    "static/js/main.c399db45.chunk.js"
+    "static/js/2.6c9115bc.chunk.js",
+    "static/css/main.224dbd10.chunk.css",
+    "static/js/main.a89d0401.chunk.js"
   ]
 }
