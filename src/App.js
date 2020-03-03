@@ -10,12 +10,17 @@ import StandAlone from './components/StandAlone'
 import ChaosBag from './components/ChaosBag'
 import Settings from './components/Settings'
 import HomePage from './pages/Home'
+import {useSelector} from 'react-redux'
+
 
 function App(props) {
   const { history } = props;
     window.addEventListener("popstate", () => {
       history.go(1);
   });
+
+
+  const CurrentGameName = useSelector(state => state.currentGame)
 // integrating disabling of back changes from here https://medium.com/@subwaymatch/disabling-back-button-in-react-with-react-router-v5-34bb316c99d7
   return (
   <div>

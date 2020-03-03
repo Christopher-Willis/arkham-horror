@@ -68,3 +68,27 @@ export function addSpentXP(gameName,value,index,missionIndex){
     missionIndex:missionIndex
   }
 }
+
+export function addDifficulty(gameName,gameDifficulty){
+  return{
+    value:gameName,
+    type:"ADD_DIFFICULTY",
+    data:gameDifficulty
+  }
+}
+
+export function addCampaignData(gameName,data){
+  return{
+    value:gameName,
+    type:"ADD_CAMPAIGNDATA",
+    data:data
+  }
+}
+
+export function addPlayerData(gameName,data){
+  return{
+    value:gameName,
+    type:"ADD_PLAYERDATA",
+    data:data
+  }
+}

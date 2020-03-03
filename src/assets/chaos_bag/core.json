@@ -1,6 +1,6 @@
 [
-    {"difficulty":"Easy", "bag" : ["+1","+1","0","0","0","-1","-1","-1","-2","-2","skull","skull","cultist","tablets","autofail","eldar"]},
-    {"difficulty":"Standard","bag" :["+1","0","0","-1","-1","-1","-2","-2","-3","-4","skull","skull","cultist","tablets","autofail","eldar"]},
-    {"difficulty":"Hard","bag":["0","0","0","-1","-1","-2","-2","-3","-3","-4","-5","skull","skull","cultist","tablets","autofail","eldar"]},
-    {"difficulty":"Expert","bag" :["0","-1","-1","-2","-2","-3","-3","-4","-4","-5","-6","-8","skull","skull","cultist","tablets","autofail","eldar"]}
+    {"difficulty":"easy", "bag" : ["+1","+1","0","0","0","-1","-1","-1","-2","-2","skull","skull","cultist","tablets","autofail","eldar"]},
+    {"difficulty":"standard","bag" :["+1","0","0","-1","-1","-1","-2","-2","-3","-4","skull","skull","cultist","tablets","autofail","eldar"]},
+    {"difficulty":"hard","bag":["0","0","0","-1","-1","-2","-2","-3","-3","-4","-5","skull","skull","cultist","tablets","autofail","eldar"]},
+    {"difficulty":"expert","bag" :["0","-1","-1","-2","-2","-3","-3","-4","-4","-5","-6","-8","skull","skull","cultist","tablets","autofail","eldar"]}
 ]

@@ -6,7 +6,7 @@ import ToggleButton from 'react-bootstrap/ToggleButton'
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup'
 import Image from 'react-bootstrap/Image'
 import {useSelector,useDispatch} from 'react-redux'
-import {ChangeCurrentGame,AddNewGame,AddChaosBag,AddInvestigators} from '../redux/actions'
+import {ChangeCurrentGame,AddNewGame,AddChaosBag,AddInvestigators,addDifficulty} from '../redux/actions'
 import InvestigatorList from '../assets/card_data/investigators.json'
 import gaurdianPic from '../assets/image/guardian.png'
 import mysticPic from '../assets/image/mystic.png'
@@ -60,6 +60,8 @@ function CoreSetup(props) {
                     dispatch(AddNewGame(CurrentGameData.gameName))
                     dispatch(AddChaosBag(CurrentGameData.gameName,ChaosBagData[bagSelected]))
                     dispatch(AddInvestigators(CurrentGameData.gameName,currentTeam))
+                    dispatch(addDifficulty(CurrentGameData.gameName,ChaosBagData[bagSelected]["difficulty"]))
+                    
                     // how we move to next page when we don't have a <Link> event to use
                     props.history.push('/campaign/core/TheGathering' )
                 }

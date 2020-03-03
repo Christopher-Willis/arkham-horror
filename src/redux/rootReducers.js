@@ -16,6 +16,16 @@ const games = (state={}, action) => {
         temp[action.value]["chaosBag"]["initial"] = [...action.data.bag]
         return temp
     }
+    if(action.type === "ADD_DIFFICULTY"){
+        const temp = cloneDeep(state)
+        temp[action.value]["chaosBag"]["difficulty"] = action.data
+        return temp
+    }
+    if(action.type === "ADD_CAMPAIGNDATA"){
+        const temp = cloneDeep(state)
+        temp[action.value]["campaignLog"] = action.data
+        return temp
+    }
     if(action.type === "ADD_INVESTGATORS"){
         const temp = cloneDeep(state)
         if(temp[action.value]["investigators"]===undefined){

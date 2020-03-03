@@ -78,7 +78,7 @@ function ChaosSetupModal(props) {
                         return ( 
                             <Col onClick={() => setLocalBagSelected(index)} key={index} xs={"auto"} className="d-flex">
                                 <Image className="icon-investigator" src={index===localBagSelected ? checked : unchecked}/>
-                                <p className="arno-text2 mx-1 my-0 p-0 pt-1 align-self-center" >{difficultyData.difficulty}</p>
+                                <p className="arno-text2 mx-1 my-0 p-0 pt-1 align-self-center text-capitalize" >{difficultyData.difficulty}</p>
                             </Col>
                         )
                     } )}

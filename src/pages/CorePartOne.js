@@ -7,10 +7,12 @@ import UnderLine from '../assets/image/underline.png'
 import MinusMark from '../assets/image/button_decrement.png'
 import PlusMark from '../assets/image/button_increment.png'
 import {useSelector,useDispatch} from 'react-redux'
-import {addPhysicalTrama,addMentalTrama,addTotalXP,addSpentXP} from '../redux/actions'
+import {addPhysicalTrama,addMentalTrama,addTotalXP,addSpentXP,addCampaignData} from '../redux/actions'
 import cloneDeep from 'lodash/cloneDeep';
 import {Link} from "react-router-dom"; 
 import ChaosDrawModal from '../modals/ChaosDrawToken'
+import CampaignLog from '../modals/CampaignLogModal'
+import scenarioGathering from '../assets/scenario_card/theGathering.json'
 
 
 function CorePartOne(props) {
@@ -19,6 +21,7 @@ function CorePartOne(props) {
     const dispatch = useDispatch()
     const [usedXP, setUsedXP] = useState([])
     const [chaosModal,setChaosModal] = useState(false)
+    const [campaignModal,setCampaignModal] = useState(false)
 
    
     // if there is no current game being played, go back to main page to select a game
@@ -48,6 +51,7 @@ function CorePartOne(props) {
             setUsedXP(new Array(gameData.investigators.initial.length).fill(0))
             dispatch(addPhysicalTrama(CurrentGameName.gameName,0,index,0))
             dispatch(addMentalTrama(CurrentGameName.gameName,0,index,0))
+            dispatch(addCampaignData(CurrentGameName.gameName,[]))
             if(investigator.cardName === "Father Mateo"){
                 dispatch(addTotalXP(CurrentGameName.gameName,5,index,0))
             }else{
@@ -210,14 +214,14 @@ function CorePartOne(props) {
             </Row>
             <Row className="my-2">
                 <Col>
-                    <div className="text-uppercase buttonlookalike text-center small font-weight-bold">
+                    <div className="text-uppercase buttonlookalike text-center small font-weight-bold" onClick={()=> setCampaignModal(true)}>
                         Campaign Log
                     </div>
                 </Col>
             </Row>
             <Row className="my-3 ">
                 <Col xs={"auto"} className="pr-1">
-                    <Link to="/">
+                    <Link to={process.env.PUBLIC_URL +"/"}>
                         <div className="text-uppercase buttonlookalike text-center small font-weight-bold px-1 py-2 ">
                             Main Menu
                         </div>
@@ -229,7 +233,8 @@ function CorePartOne(props) {
                     </div>
                 </Col>
             </Row>
-            <ChaosDrawModal chaosDrawValue={chaosModal} setChaosModal={setChaosModal} />
+            <ChaosDrawModal chaosDrawValue={chaosModal} setChaosModal={setChaosModal} scenarioCard={scenarioGathering}/>
+            <CampaignLog campaignModal={campaignModal} setCampaignModal={setCampaignModal} title={"Night Of The Zealot"} campaignData={gameData["campaignLog"]} playerData={gameData["playerLog"]}/>
         </Container >
     )
 }
